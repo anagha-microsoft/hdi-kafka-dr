@@ -7,7 +7,7 @@ In this example, we will provision Kafka and dependencies in US East 2 and US We
 
 ### 1.0.1. Provision resource group in USEast2
 Create a resource group.
-
+![Create USE2 RG](../images/1-create-rg-use2.png)
 
 
 ### 1.0.2. Provision Active Directory in USEast2 in the resource group
