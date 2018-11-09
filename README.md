@@ -41,6 +41,8 @@ One of the dependencies for cross datacenter connectivity is leveraging custom D
 
 
 ### 1.0.4. Configure static IPs for the Windows server
+The sample shows public IPs for ease of demonsration only.  This is not recommended for production.<br><br>
+1.0.4.1. Configure static private IP:<br>
 <br><br>
 ![Static-IP-1](images/4-config-static-priv-ip-1.png)
 <br><br>
@@ -48,6 +50,7 @@ One of the dependencies for cross datacenter connectivity is leveraging custom D
 <br><br>
 ![Static-IP-3](images/4-config-static-priv-ip-3.png)
 <br><br>
+1.0.4.1. Configure static public IP:<br>
 ![Static-IP-4](images/4-config-static-priv-ip-4.png)
 <br><br>
 ![Static-IP-5](images/4-config-static-priv-ip-5.png)
