@@ -36,6 +36,8 @@ One of the dependencies for cross datacenter connectivity is leveraging custom D
 <br><br>
 ![Create-DNS-9](images/3-create-windows-server-9.png)
 <br><br>
+![Create-DNS-10](images/3-create-windows-server-10.png)
+<br><br>
 
 
 ### 1.0.3. Provision a virtual network for Kafka
