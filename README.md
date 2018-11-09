@@ -8,13 +8,13 @@ In this example, we will provision Kafka and dependencies in US East 2 and US We
 ### 1.0.1. Provision resource group in USEast2
 Create a resource group.<br>
 ![Create USE2 RG](images/1-create-rg.png)
-
+<br><br>
 ### 1.0.2. Provision a virtual network
 Create a virtual network as described below in the resource group created.<br>
 ![Create vnet](images/2-create-vnet-1.png)
-<br>
+<br><br>
 ![Create vnet](images/2-create-vnet-2.png)
-<br>
+<br><br>
 ### 1.0.3. Provision a Windows server in USEast2 in the resource group
 One of the dependencies for cross datacenter connectivity is leveraging custom DNS service per cluster.  For this, we will use a Windows server with DNS enabled.  
 ![Create-DNS-1](images/3-create-windows-server-1.png)
