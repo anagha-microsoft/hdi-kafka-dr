@@ -40,7 +40,20 @@ One of the dependencies for cross datacenter connectivity is leveraging custom D
 <br><br>
 
 
-### 1.0.3. Provision a virtual network for Kafka
+### 1.0.4. Configure static IPs for the Windows server
+<br><br>
+![Static-IP-1](images/4-config-static-priv-ip-1.png)
+<br><br>
+![Static-IP-2](images/4-config-static-priv-ip-2.png)
+<br><br>
+![Static-IP-3](images/4-config-static-priv-ip-3.png)
+<br><br>
+![Static-IP-4](images/4-config-static-priv-ip-4.png)
+<br><br>
+![Static-IP-5](images/4-config-static-priv-ip-5.png)
+<br><br>
+![Static-IP-6](images/4-config-static-priv-ip-6.png)
+<br><br>
 
 ### 1.0.4. Peer the Kafka Vnet with the VNet with AD in it
 
