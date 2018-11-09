@@ -15,9 +15,27 @@ Create a virtual network as described below in the resource group created.<br>
 <br>
 ![Create vnet](images/2-create-vnet-2.png)
 <br>
-### 1.0.2. Provision a Windows server in USEast2 in the resource group
+### 1.0.3. Provision a Windows server in USEast2 in the resource group
 One of the dependencies for cross datacenter connectivity is leveraging custom DNS service per cluster.  For this, we will use a Windows server with DNS enabled.  
-![Create-DNS-1](images/1-create-rg.png)
+![Create-DNS-1](images/3-create-windows-server-1.png)
+<br>
+![Create-DNS-2](images/3-create-windows-server-2.png)
+<br>
+![Create-DNS-3](images/3-create-windows-server-3.png)
+<br>
+![Create-DNS-4](images/3-create-windows-server-4.png)
+<br>
+![Create-DNS-5](images/3-create-windows-server-5.png)
+<br>
+![Create-DNS-6](images/3-create-windows-server-6.png)
+<br>
+![Create-DNS-7](images/3-create-windows-server-7.png)
+<br>
+![Create-DNS-8](images/3-create-windows-server-8.png)
+<br>
+![Create-DNS-9](images/3-create-windows-server-9.png)
+<br>
+
 
 ### 1.0.3. Provision a virtual network for Kafka
 
