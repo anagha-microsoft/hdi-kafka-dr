@@ -6,7 +6,7 @@ In this example, we will provision Kafka and dependencies in US East 2 and US We
 ## 1.  Primary datacenter - USEast2 - setup
 
 ### 1.0.1. Provision resource group in USEast2
-Create a resource group.
+Create a resource group.<br>
 ![Create USE2 RG](../images/1-create-rg-use2.png)
 
 
