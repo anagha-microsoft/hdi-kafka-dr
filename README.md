@@ -6,9 +6,17 @@ In this example, we will provision Kafka and dependencies in US East 2 and US We
 ## 1.  Primary datacenter - USEast2 - setup
 
 ### 1.0.1. Provision resource group in USEast2
+Create a resource group.<br>
+![Create USE2 RG](images/1-create-rg-use2.png)
 
 ### 1.0.2. Provision Active Directory in USEast2 in the resource group
-One of the dependencies for cross datacenter connectivity is leveraging custom DNS service per cluster.  For this, we will use Active Directory with DNS enabled.
+One of the dependencies for cross datacenter connectivity is leveraging custom DNS service per cluster.  For this, we will use Active Directory with DNS enabled.  The following is the link to provision AD.  Select the resource group you created in the previous step.<br>
+https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc
+<br>
+![ProvisionAD USE2 RG](images/3-provision-ad-use2.png)
+<br>
+Here is what it should look like when done-<br>
+![AD-In USE2 RG](images/3-provision-ad-use2.png)
 
 ### 1.0.3. Provision a virtual network for Kafka
 
