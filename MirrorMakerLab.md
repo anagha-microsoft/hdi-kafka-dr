@@ -7,7 +7,7 @@ This sample covers DR for HDInsight Kafka leveraging MirrorMaker.  In this examp
 To replicate to DR with Mirrormaker-
 1.  Create two identical clusters in two separate datacenters with non-overlapping IP address spaces
 2.  Configure global Vnet peering for the Vnets hosting the two clusters (Azure DNS will do).
-3.  Enable both clusters to bradcast IP addresses
+3.  Enable both clusters to braodcast IP addresses
 4.  Enable both clusters to listen on all network interfaces
 5.  On the secondary cluster-
   - (i) Create a producer.properties file that lists secondary cluster bootstrap servers with port
@@ -17,9 +17,6 @@ To replicate to DR with Mirrormaker-
   - (iv) In the lab - we will launch a console producer in the primary and key in some messages
   - AND
   - (v) Launch console consumer in the secondary cluster and watch the messages replicated displayed on the console.
-  
-
-
 
 ## 1.  Primary datacenter - USEast - setup
 
