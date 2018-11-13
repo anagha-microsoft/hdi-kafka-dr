@@ -190,7 +190,7 @@ Restart Kafka-<br>
 <hr>
 
 
-### 4.0.4. Make note of the broker IP addresses
+### 4.0.4. Make note of the IP addresses
 ![IPs](images/9-IPs.png)
 <br><br>
 <hr>
