@@ -233,22 +233,7 @@ sudo apt -y install jq
 
 <br>
 
-5.0.2.3. Get broker list into a variable<br>
-
-```
-export KAFKABROKERS=`curl -sS -u admin -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/KAFKA/components/KAFKA_BROKER | jq -r '["\(.host_components[].HostRoles.host_name):9092"] | join(",")' | cut -d',' -f1,2`
-```
-
-<br>
-Validate:<br>
-
-```
-echo $KAFKABROKERS
-```
-
-<br>
-
-5.0.2.4. Get zookeeper list into a variable<br>
+5.0.2.3. Get zookeeper list into a variable<br>
 
 ```
 export KAFKAZKHOSTS=`curl -sS -u admin -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/ZOOKEEPER/components/ZOOKEEPER_SERVER | jq -r '["\(.host_components[].HostRoles.host_name):2181"] | join(",")' | cut -d',' -f1,2`
@@ -262,7 +247,7 @@ echo $KAFKAZKHOSTS
 ```
 
 <br>
-5.0.2.5. Create a topic<br>
+5.0.2.4. Create a topic<br>
 
 ```
 /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --create --replication-factor 3 --partitions 3 --topic mirrormakertest --zookeeper $KAFKAZKHOSTS
@@ -272,6 +257,8 @@ You should see a message that states that the topic was created.
 
 
 ## 6.  Setup in secondary Kafka cluster
+Repeat the steps performed in section 5 in the secondary Kafka cluster.  Be sure to use the same topic name in both clusters for the lab - preferably follow instructions verbatim except for IP address and cluster names.
+
 ### 6.0.1. SSH into cluster
 Navigate to the portal, get the SSH command to connect to the cluster and SSH to the headnode.
 
