@@ -75,6 +75,7 @@ Topics and associated events.
 ### 2.0.5. Replication tooling & considerations, specific to HDInsight
 #### 2.0.5.1. Apache MirrorMaker
 This is the defacto Kafka OSS replication utility for Kafka - topic to topic, cluster to cluster. <br>
+[Documentation](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330)
 
 ### 2.0.6. Networking considerations
 #### 2.0.6.1. Both datacenters on Azure
