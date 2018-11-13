@@ -5,7 +5,7 @@ This sample covers DR for HDInsight Kafka leveraging MirrorMaker.  In this examp
 
 [Summary](MirrorMakerLab.md#long-story-short)<br>
 [1. Primary datacenter - USEast - setup](MirrorMakerLab.md#1--primary-datacenter---useast---setup)<br>
-[1.0.1. Provision resource group in USEast](MirrorMakerLab.md#101-provision-resource-group-in-useast)<br>
+  [1.0.1. Provision resource group in USEast](MirrorMakerLab.md#101-provision-resource-group-in-useast)<br>
 [1.0.2. Provision a virtual network in the resource group](MirrorMakerLab.md#102-provision-a-virtual-network-in-the-resource-group)<br>
 [1.0.3. Provision Kafka within the resource group and virtual network created](MirrorMakerLab.md#103-provision-kafka-within-the-resource-group-and-virtual-network-created)<br>
 [2. Secondary datacenter - USWest - setup](MirrorMakerLab.md#2--secondary-datacenter---uswest---setup)<br>
