@@ -45,7 +45,7 @@ This sample covers DR for HDInsight Kafka leveraging MirrorMaker.  In this examp
 
 <hr>
 
-## Long story short
+## Quick read/Long story short
 To replicate to DR with Mirrormaker-
 1.  Create two identical clusters in two separate datacenters with non-overlapping IP address spaces
 2.  Configure global Vnet peering for the Vnets hosting the two clusters (Azure DNS will do).
@@ -59,6 +59,10 @@ To replicate to DR with Mirrormaker-
   - (iv) In the lab - we will launch a console producer in the primary and key in some messages
   - AND
   - (v) Launch console consumer in the secondary cluster and watch the messages replicated displayed on the console.
+  
+The next section onwards is the lab.<br>
+
+<hr>
 
 ## 1.  Primary datacenter - USEast - setup
 
@@ -114,6 +118,8 @@ Repeat the steps above in US West datacenter-<br>
 1.  Create resource group<br>
 2.  Within the resource group, create a virtual network with a different IP address space that the primary<br>
 3.  Provision Kafka in the resource group and virtual network created
+
+<hr>
 
 ## 3.  Configure Global Vnet Peering
 We will now peer the virtual networks of the primary and secondary datacenters.
@@ -257,6 +263,8 @@ Restart Kafka-<br>
 2.  Configure listener to listen on all network interfaces
 3.  Restart Kafka
 4.  Make a note of the broker IP addresses
+<br>
+<hr>
 
 ## 5.  Setup in primary Kafka cluster
 ### 5.0.1. SSH into cluster
@@ -311,7 +319,7 @@ echo $KAFKAZKHOSTS
 ```
 You should see a message that states that the topic was created.
 <br>
-
+<hr>
 
 ## 6.  Setup in secondary Kafka cluster
 Repeat the steps performed in section 5 in the secondary Kafka cluster.  Be sure to use the same topic name in both clusters for the lab - preferably follow instructions verbatim except for IP address and cluster names.
@@ -372,6 +380,7 @@ echo $KAFKAZKHOSTS
 ```
 
 <br>
+<hr>
 
 ## 7.  MirrorMaker specific setup in the **secondary** Kafka cluster
 
@@ -395,12 +404,16 @@ bootstrap.servers=10.24.0.4:9092,10.24.0.6:9092,10.24.0.14:9092
 compression.type=none
 ```
 
+<hr>
+
 ## 8.  Start MirrorMaker in the **secondary** Kafka cluster
 In the secondary cluster SSH terminal, from the Linux command line, run the following command to start MirrorMaker.  Keep this command runnning for the duration of the lab.  Modify number of streams as needed and makes sense.<br>
 
 ```
 /usr/hdp/current/kafka-broker/bin/kafka-run-class.sh kafka.tools.MirrorMaker --consumer.config consumer.properties --producer.config producer.properties --whitelist mirrormakertest --num.streams 3
 ```
+
+<hr>
 
 ## 9.  Test MirrorMaker
 ### 9.0.1. Launch console producer in **primary** Kafka cluster 
