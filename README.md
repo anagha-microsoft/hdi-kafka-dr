@@ -6,7 +6,7 @@ The following documentation covers High Availability and Disaster Recovery for H
 
 [1. High Availability](README.md#1--high-availability)<br>
 [2. Disaster Recovery](DisasterRecovery.md)<br>
-[3. Tutorial for cross datacenter replication with Apache MirrorMaker](MirrorMakerLab.md)
+[3. Hands-on lab for cross-datacenter replication with Apache MirrorMaker](MirrorMakerLab.md)
 <hr>
 
 ## 1.  High Availability
