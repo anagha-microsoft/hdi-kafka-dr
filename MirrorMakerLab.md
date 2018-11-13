@@ -267,7 +267,7 @@ echo $KAFKAZKHOSTS
 ```
 /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --create --replication-factor 3 --partitions 3 --topic mirrormakertest --zookeeper $KAFKAZKHOSTS
 ```
-
+You should see a message that states that the topic was created.
 <br>
 
 
