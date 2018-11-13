@@ -83,7 +83,7 @@ This is the defacto Kafka OSS replication utility for Kafka - topic to topic, cl
 3. Configure global Vnet peering
 
 ### 2.0.7. Show me, step-by-step, how Kafka replication is done on Azure across datacenters
-[Next](DisasterRecovery.md#207-show-me-step-by-step-how-kafka-replication-is-done-on-azure-across-datacenters)
+[Next](MirrorMakerLab.md)
 
 ### Diagrams
 Want to take the diagrams and customize? Find the PowerPoint deck [here](images/DR-Architecture-Options.pptx), with the diagrams in it.
