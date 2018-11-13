@@ -26,6 +26,7 @@ FT => Fault tolerance<BR><br>
 <br>
 
 **Architectural considerations:**
+<br>
 When planning HA for HDInsight Kafka, the following are some considerations:<br>
 1.  Is the storage infrastructure HA?
 2.  Is the compute infrastructure HA?
