@@ -99,3 +99,64 @@ We will now peer the virtual networks of the primary and secondary datacenters.
 <br><br>
 <hr>
 
+## 4.  Configure Kafka to broadcast private IP addresses and listen on all network interfaces 
+### 4.0.1. Primary datacenter - configure IP advertising
+![Conf-ip-adv-1](images/5-conf-kafka-IP-1.png)
+<br><br>
+<hr>
+
+![Conf-ip-adv-2](images/5-conf-kafka-IP-2.png)
+<br><br>
+<hr>
+
+![Conf-ip-adv-3](images/5-conf-kafka-IP-3.png)
+<br><br>
+<hr>
+
+![Conf-ip-adv-4](images/5-conf-kafka-IP-4.png)
+<br><br>
+<hr>
+
+![Conf-ip-adv-5](images/5-conf-kafka-IP-5.png)
+<br><br>
+<hr>
+
+![Conf-ip-adv-6](images/5-conf-kafka-IP-6.png)
+<br><br>
+<hr>
+
+![Conf-ip-adv-7](images/5-conf-kafka-IP-7.png)
+<br><br>
+<hr>
+
+![Conf-ip-adv-8](images/5-conf-kafka-IP-8.png)
+<br><br>
+<hr>
+
+![Conf-ip-adv-9](images/5-conf-kafka-IP-9.png)
+<br><br>
+<hr>
+
+### 4.0.2. Primary datacenter - configure listener
+![Conf-listener-1](images/6-conf-kafka-listener-1.png)
+<br><br>
+<hr>
+
+![Conf-listener-2](images/6-conf-kafka-listener-2.png)
+<br><br>
+<hr>
+
+![Conf-listener-3](images/6-conf-kafka-listener-3.png)
+<br><br>
+<hr>
+
+![Conf-listener-4](images/6-conf-kafka-listener-4.png)
+<br><br>
+<hr>
+
+### 4.0.3. Primary datacenter - restart Kafka
+
+### 4.0.4. Secondary datacenter - repeat 4.0.[1-3]
+1.  Configure Kafka for IP advertising
+2.  Configure listener to listen on all network interfaces
+3.  Restart Kafka
