@@ -26,3 +26,35 @@ Azure VMs have an SLA, as do HDInsight master and worker nodes.  To maintain the
 ### 1.0.3. Hadoop service component - master nodes
 Although Kafka has a amsteless architecture, the management and monitoring services  in Hadoop like Ambari need to be configured HA.  For HA, HDInsight comes with two master nodes, in active and standby mode for maximizing FT.  The same are provisioned intelligently for FT across fault and update domains.
 
+### 1.0.4. Hadoop service component - Zookeeper
+Zookeeper is a distributed coordination service and is a foundational service.  HDInsight leverages 3 Zookeeper servers - the minimum recommended for HA.
+
+### 1.0.5. Hadoop service component - Ambari
+Ambari is configured HA across the two master nodes.
+
+### 1.0.6. Kafka framework service component - Brokers
+The Kafka framework through heartbeating keeps track of brokers that are alive.  If a broker goes down, the framework blacklists the broker, detects under-replication of logs and starts replicating to a different broker or set of brokers.  
+
+### 1.0.7. HDInsight platform service - Brokers
+The HDInight service monitors the brokers for outages or any issues and initiates and completes self-healing to ensure cluster health to stay within the promised service SLA.
+
+### 1.0.8. Kafka framework component - replica placement with rack awareness 
+In Azure, the equaivalent of intelligent replica-placement with rack-awareness is spreading replicas across fault and update domains.<br>
+
+Kafka does not do this automatically.  HDInsight Kafka provides a partition rebalancing utility to manage intelligent replica placement across fault and update domains and its available at -<br>
+https://github.com/hdinsight/hdinsight-kafka-tools
+<br>
+**When does this need to be run?**<br>
+- When a new topic is created or partition is scaled
+- When you scale up a cluster by adding brokers
+
+**Considerations WRT fault domains:**<br>
+*Zookeeper is a critical dependency for Kafka, and should be deploying in multiples of odd numbers across fault and update domains, with a minimum of 3.*<br>
+
+But... there are some datacenters with only two fault domains.  Consider avoiding Kafka in these datacenters if at all possible, and if you cant, increase topic replication to 4.
+
+### 1.0.9. What about when I am writing/reading from Kafka and a broker hosting my leader partition replica goes down?
+The framework manages redirection for you to a different replica.
+
+## 2.  Disaster Recovery
+Next
