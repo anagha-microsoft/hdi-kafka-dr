@@ -3,6 +3,24 @@
 
 This sample covers DR for HDInsight Kafka leveraging MirrorMaker.  In this example, we will provision HDInsight Kafka and dependencies in US East (primary) and US West (secondary).  The following are steps to deploy clusters, configure replication to DR and test the replication.<br>
 
+## Long story short
+To replicate to DR with Mirrormaker-
+1.  Create two identical clusters in two separate datacenters with non-overlapping IP address spaces
+2.  Configure global Vnet peering for the Vnets hosting the two clusters (Azure DNS will do).
+3.  Enable both clusters to bradcast IP addresses
+4.  Enable both clusters to listen on all network interfaces
+5.  On the secondary cluster-
+  (i) Create a producer.properties file that lists secondary cluster bootstrap servers with port
+  (ii) Create a consumer.properties file that lists primary cluster's zookeeper servers with port and consumer group 
+  (iii) Launch MirrorMaker with the two properties files, topic name and relevant parameters
+  AND you are good to go
+  (iv) In the lab - we will launch a console producer in the primary and key in some messages
+  AND
+  (v) Launch console consumer in the secondary cluster and watch the messages replicated displayed on the console.
+  
+
+
+
 ## 1.  Primary datacenter - USEast - setup
 
 ### 1.0.1. Provision resource group in USEast
