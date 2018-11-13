@@ -59,3 +59,14 @@ Topics and associated events.
 ![8-replicate-options-4](images/8-dr-options-4.png)
 <br><br>
 <hr>
+
+### 2.0.5. Replication tooling & considerations, specific to HDInsight
+#### 2.0.5.1. Apache MirrorMaker
+This is the defacto Kafka OSS replication utility for Kafka - topic to topic, cluster to cluster. <br>
+
+### 2.0.6. Networking considerations
+#### 2.0.6.1. Both datacenters on Azure
+1. Cross region commuication is over private IPs only.
+2. Ensure there are no overlapping IP addresses across clusters/ddatacenters
+3. Configure global Vnet peering
+
