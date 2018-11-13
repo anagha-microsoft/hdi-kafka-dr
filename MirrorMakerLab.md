@@ -10,13 +10,13 @@ To replicate to DR with Mirrormaker-
 3.  Enable both clusters to bradcast IP addresses
 4.  Enable both clusters to listen on all network interfaces
 5.  On the secondary cluster-
-  (i) Create a producer.properties file that lists secondary cluster bootstrap servers with port
-  (ii) Create a consumer.properties file that lists primary cluster's zookeeper servers with port and consumer group 
-  (iii) Launch MirrorMaker with the two properties files, topic name and relevant parameters
-  AND you are good to go
-  (iv) In the lab - we will launch a console producer in the primary and key in some messages
-  AND
-  (v) Launch console consumer in the secondary cluster and watch the messages replicated displayed on the console.
+  - (i) Create a producer.properties file that lists secondary cluster bootstrap servers with port
+  - (ii) Create a consumer.properties file that lists primary cluster's zookeeper servers with port and consumer group 
+  - (iii) Launch MirrorMaker with the two properties files, topic name and relevant parameters
+  - AND you are good to go
+  - (iv) In the lab - we will launch a console producer in the primary and key in some messages
+  - AND
+  - (v) Launch console consumer in the secondary cluster and watch the messages replicated displayed on the console.
   
 
 
