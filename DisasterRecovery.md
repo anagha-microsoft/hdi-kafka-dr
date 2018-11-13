@@ -4,6 +4,17 @@ The following documentation covers Disaster Recovery for HDInsight-Kafka.
 
 [High Availability](README.md#1--high-availability)<br>
 [Disaster Recovery](DisasterRecovery.md#2--disaster-recovery)
+- [2.0.1. What is your SLA for Disaster Recovery?](DisasterRecovery.md#201-what-is-your-sla-for-disaster-recovery)
+- [2.0.2. What to replicate?]()
+- [2.0.3. Replication to DR - options]()
+  - [2.0.3.1. Active - Hot standby with dual ingest and processing]()
+  - [2.0.3.2. Active- cold standby with batch replication]()
+  - [2.0.3.3. Active-Active (bi-directional replication) with Apache MirrorMaker]()
+- [2.0.5. Replication tooling & considerations, specific to HDInsight]()
+  - [2.0.5.1. Apache MirrorMaker]()
+- [2.0.6. Networking considerations]()
+  - [2.0.6.1. Both datacenters on Azure]()
+- [2.0.7. Show me, step-by-step, how Kafka replication is done on Azure across datacenters]()
 <hr>
 
 ## 2.  Disaster Recovery
@@ -36,7 +47,7 @@ Topics and associated events.
 
 
 
-#### 2.0.3.2. Active - Hot standby with dual ingest and processing
+#### 2.0.3.2. Active- cold standby with batch replication
 ![8-replicate-options-2](images/8-dr-options-2.png)
 - Applications write to Kafka on the active-primary ONLY
 - Replication to DR Kafka cluster is incremental, batch, scheduled with Apache MirrorMaker
@@ -46,7 +57,7 @@ Topics and associated events.
 <hr>
 
 
-#### 2.0.3.3. Active - Hot standby with dual ingest and processing
+#### 2.0.3.3. Active-Active (bi-directional replication) with Apache MirrorMaker
 ![8-replicate-options-3](images/8-dr-options-3.png)
 - Applications/integration processes publish to/consume from nearest Kafka
 - Both clusters run identical processing
@@ -70,7 +81,7 @@ This is the defacto Kafka OSS replication utility for Kafka - topic to topic, cl
 2. Ensure there are no overlapping IP addresses across clusters/ddatacenters
 3. Configure global Vnet peering
 
-### 2.0.7. Show me, step-by-step, how distcp is done on Azure across datacenters
+### 2.0.7. Show me, step-by-step, how Kafka replication is done on Azure across datacenters
 Next
 
 ### Diagrams
