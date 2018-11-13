@@ -410,7 +410,7 @@ export KAFKABROKERS=`curl -sS -u admin -G https://$CLUSTERNAME.azurehdinsight.ne
 
 In the primary cluster, from the producer console, key in some messages.
 <br>
-![mirror-1](images/14-mirrormaker-test-1.png.png)
+![mirror-1](images/14-mirrormaker-test-1.png)
 <br><br>
 You should see them in the destination DR cluster's console consumer rightaway.<br>
 
@@ -420,7 +420,7 @@ You should see them in the destination DR cluster's console consumer rightaway.<
 
 You should see the messages keyed in source/primary cluster's console producer in the DR cluster console consumer.<br>
 
-14-mirrormaker-test-1.png
-
-
+![mirror-2](images/14-mirrormaker-test-2.png)
+<br><br>
+<hr>
 This concludes the lab.
