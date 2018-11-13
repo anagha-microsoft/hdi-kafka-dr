@@ -25,6 +25,7 @@ FT => Fault tolerance<BR><br>
 ![Topology-2](images/10-deployment-diagram-3.png)
 <br>
 
+**Architectural considerations:**
 When planning HA for HDInsight Kafka, the following are some considerations:<br>
 1.  Is the storage infrastructure HA?
 2.  Is the compute infrastructure HA?
