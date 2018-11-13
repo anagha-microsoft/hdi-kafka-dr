@@ -4,8 +4,9 @@
 HDInsight Kafka is Azure's Hortonworks distribution based managed Kafka as a service.  
 The following documentation covers High Availability and Disaster Recovery for HDInsight-Kafka.
 
-[High Availability](README.md#1--high-availability)<br>
-[Disaster Recovery](DisasterRecovery.md)
+[1. High Availability](README.md#1--high-availability)<br>
+[2. Disaster Recovery](DisasterRecovery.md)<br>
+[3. Tutorial for cross datacenter replication with Apache MirrorMaker](MirrorMakerLab.md)
 <hr>
 
 ## 1.  High Availability
