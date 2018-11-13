@@ -4,30 +4,39 @@
 This sample covers DR for HDInsight Kafka leveraging MirrorMaker.  In this example, we will provision HDInsight Kafka and dependencies in US East (primary) and US West (secondary).  The following are steps to deploy clusters, configure replication to DR and test the replication.<br>
 
 [Summary](MirrorMakerLab.md#long-story-short)<br>
+
 [1. Primary datacenter - USEast - setup](MirrorMakerLab.md#1--primary-datacenter---useast---setup)<br>
 - [1.0.1. Provision resource group in USEast](MirrorMakerLab.md#101-provision-resource-group-in-useast)<br>
 - [1.0.2. Provision a virtual network in the resource group](MirrorMakerLab.md#102-provision-a-virtual-network-in-the-resource-group)<br>
 - [1.0.3. Provision Kafka within the resource group and virtual network created](MirrorMakerLab.md#103-provision-kafka-within-the-resource-group-and-virtual-network-created)<br>
+
 [2. Secondary datacenter - USWest - setup](MirrorMakerLab.md#2--secondary-datacenter---uswest---setup)<br>
+
 [3. Configure Global Vnet Peering](MirrorMakerLab.md#3--configure-global-vnet-peering)<br>
 - [3.0.1. Peer the primary datacenter's vnet to the secondary datacenter's](MirrorMakerLab.md#301-peer-the-primary-datacenters-vnet-to-the-secondary-datacenters)<br>
 - [3.0.2. Peer the secondary datacenter's vnet to the primary datacenter's](MirrorMakerLab.md#302-peer-the-secondary-datacenters-vnet-to-the-primary-datacenters)<br>
+
 [4. Configure Kafka to broadcast private IP addresses and listen on all network interfaces](MirrorMakerLab.md#4--configure-kafka-to-broadcast-private-ip-addresses-and-listen-on-all-network-interfaces)<br>
 - [4.0.1. Primary datacenter - configure IP advertising](MirrorMakerLab.md#401-primary-datacenter---configure-ip-advertising)<br>
 - [4.0.2. Primary datacenter - configure listener](MirrorMakerLab.md#402-primary-datacenter---configure-listener)<br>
 - [4.0.3. Primary datacenter - restart Kafka](MirrorMakerLab.md#403-primary-datacenter---restart-kafka)<br>
 - [4.0.4. Make note of the IP addresses](MirrorMakerLab.md#404-make-note-of-the-ip-addresses)<br>
 - [4.0.5. Secondary datacenter - repeat 4.0.[1-4]](MirrorMakerLab.md#405-secondary-datacenter---repeat-401-4)<br>
+
 [5. Setup in primary Kafka cluster](MirrorMakerLab.md#5--setup-in-primary-kafka-cluster)<br>
 - [5.0.1. SSH into cluster](MirrorMakerLab.md#501-ssh-into-cluster)<br>
 - [5.0.2. Create Kafka topic](MirrorMakerLab.md#502-create-kafka-topic)<br>
+
 [6. Setup in secondary Kafka cluster](MirrorMakerLab.md#6--setup-in-secondary-kafka-cluster)<br>
 - [6.0.1. SSH into cluster](MirrorMakerLab.md#601-ssh-into-cluster)<br>
 - [6.0.2. Create Kafka topic](MirrorMakerLab.md#602-create-kafka-topic)<br>
+
 [7. MirrorMaker specific setup in the secondary Kafka cluster](MirrorMakerLab.md#7--mirrormaker-specific-setup-in-the-secondary-kafka-cluster)<br>
 - [7.0.1. Create consumer properties file to be passed to MirrorMaker](MirrorMakerLab.md#701-create-consumer-properties-file-to-be-passed-to-mirrormaker)<br>
 - [7.0.2. Create producer properties to be passed to MirrorMaker](MirrorMakerLab.md#702-create-producer-properties-to-be-passed-to-mirrormaker)<br>
+
 [8. Start MirrorMaker in the secondary Kafka cluster](MirrorMakerLab.md#8--start-mirrormaker-in-the-secondary-kafka-cluster)<br>
+
 [9. Test MirrorMaker](MirrorMakerLab.md#9--test-mirrormaker)<br>
 - [9.0.1. Launch console producer in primary Kafka cluster](MirrorMakerLab.md#901-launch-console-producer-in-primary-kafka-cluster)<br>
 - [9.0.2. Launch console consumer in secondary Kafka cluster](MirrorMakerLab.md#902-launch-console-consumer-in-secondary-kafka-cluster)<br>
