@@ -328,6 +328,7 @@ echo $KAFKAZKHOSTS
 ```
 
 <br>
+
 ### 6.0.3. Create consumer properties 
 In the Linux terminal, in a SSH session, create a file called consumer.properties and paste the below into it;  Replace zookeeper IPs with your secondary Kafka cluster zookeeper IPs-<br>
 
@@ -340,6 +341,7 @@ group.id=mirrorgroup
 <hr>
 
 ### 6.0.4. Create producer properties 
+
 In the Linux terminal, in a SSH session, create a file called producer.properties and paste the below into it;  Replace bootstrap server IPs with your secondary Kafka cluster broker IPs-<br>
 
 ```
