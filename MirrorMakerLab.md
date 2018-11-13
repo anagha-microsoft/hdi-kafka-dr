@@ -1,7 +1,7 @@
 
 # HDInsight-Kafka: MirrorMaker for replication to DR - by example
 
-This sample covers DR for HDInsight Kafka leveraging MirrorMaker.  In this example, we will provision HDInsight Kafka and dependencies in US East (primary) and US West (secondary).  The following are steps to deploy and configure replication to DR.<br>
+This sample covers DR for HDInsight Kafka leveraging MirrorMaker.  In this example, we will provision HDInsight Kafka and dependencies in US East (primary) and US West (secondary).  The following are steps to deploy clusters, configure replication to DR and test the replication.<br>
 
 ## 1.  Primary datacenter - USEast - setup
 
