@@ -74,4 +74,4 @@ This is the defacto Kafka OSS replication utility for Kafka - topic to topic, cl
 Next
 
 ### Diagrams
-Want to take the diagrams and customize? Find the PowerPoint deck [here](DR-Architecture-Options.pptx), with the diagrams in it.
+Want to take the diagrams and customize? Find the PowerPoint deck [here](images/DR-Architecture-Options.pptx), with the diagrams in it.
