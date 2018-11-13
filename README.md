@@ -20,6 +20,10 @@ FT => Fault tolerance<BR><br>
 ![Topology](images/10-deployment-diagram-2.png)
 <br>
 
+**HDInsight - broker, partitions, replicas:**
+<br>
+![Topology-2](images/10-deployment-diagram-3.png)
+<br>
 
 When planning HA for HDInsight Kafka, the following are some considerations:<br>
 1.  Is the storage infrastructure HA?
