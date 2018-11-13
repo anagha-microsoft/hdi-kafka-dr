@@ -5,7 +5,7 @@ The following documentation covers Disaster Recovery for HDInsight-Kafka.
 [High Availability](README.md#1--high-availability)<br>
 [Disaster Recovery](DisasterRecovery.md#2--disaster-recovery)
 - [2.0.1. What is your SLA for Disaster Recovery?](DisasterRecovery.md#201-what-is-your-sla-for-disaster-recovery)
-- [2.0.2. What to replicate?]()
+- [2.0.2. What to replicate?](DisasterRecovery.md#202-what-to-replicate)
 - [2.0.3. Replication to DR - options]()
   - [2.0.3.1. Active - Hot standby with dual ingest and processing]()
   - [2.0.3.2. Active- cold standby with batch replication]()
