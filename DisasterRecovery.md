@@ -6,15 +6,16 @@ The following documentation covers Disaster Recovery for HDInsight-Kafka.
 [Disaster Recovery](DisasterRecovery.md#2--disaster-recovery)
 - [2.0.1. What is your SLA for Disaster Recovery?](DisasterRecovery.md#201-what-is-your-sla-for-disaster-recovery)
 - [2.0.2. What to replicate?](DisasterRecovery.md#202-what-to-replicate)
-- [2.0.3. Replication to DR - options]()
-  - [2.0.3.1. Active - Hot standby with dual ingest and processing]()
-  - [2.0.3.2. Active- cold standby with batch replication]()
-  - [2.0.3.3. Active-Active (bi-directional replication) with Apache MirrorMaker]()
-- [2.0.5. Replication tooling & considerations, specific to HDInsight]()
-  - [2.0.5.1. Apache MirrorMaker]()
-- [2.0.6. Networking considerations]()
-  - [2.0.6.1. Both datacenters on Azure]()
-- [2.0.7. Show me, step-by-step, how Kafka replication is done on Azure across datacenters]()
+- [2.0.3. Replication to DR - options](DisasterRecovery.md#203-replication-to-dr---options)
+  - [2.0.3.1. Active - Hot standby with dual ingest and processing](DisasterRecovery.md#2031-active---hot-standby-with-dual-ingest-and-processing)
+  - [2.0.3.2. Active- cold standby with batch replication](DisasterRecovery.md#2032-active--cold-standby-with-batch-replication)
+  - [2.0.3.3. Active-Active (bi-directional replication) with Apache MirrorMaker](DisasterRecovery.md#2033-active-active-bi-directional-replication-with-apache-mirrormaker)
+- [2.0.4. Comparing the options](DisasterRecovery.md#204-comparing-the-options)
+- [2.0.5. Replication tooling & considerations, specific to HDInsight](DisasterRecovery.md#205-replication-tooling--considerations-specific-to-hdinsight)
+  - [2.0.5.1. Apache MirrorMaker](DisasterRecovery.md#2051-apache-mirrormaker)
+- [2.0.6. Networking considerations](DisasterRecovery.md#206-networking-considerations)
+  - [2.0.6.1. Both datacenters on Azure](DisasterRecovery.md#2061-both-datacenters-on-azure)
+- [2.0.7. Show me, step-by-step, how Kafka replication is done on Azure across datacenters](DisasterRecovery.md#207-show-me-step-by-step-how-kafka-replication-is-done-on-azure-across-datacenters)
 <hr>
 
 ## 2.  Disaster Recovery
@@ -82,7 +83,7 @@ This is the defacto Kafka OSS replication utility for Kafka - topic to topic, cl
 3. Configure global Vnet peering
 
 ### 2.0.7. Show me, step-by-step, how Kafka replication is done on Azure across datacenters
-Next
+[Next](DisasterRecovery.md#207-show-me-step-by-step-how-kafka-replication-is-done-on-azure-across-datacenters)
 
 ### Diagrams
 Want to take the diagrams and customize? Find the PowerPoint deck [here](images/DR-Architecture-Options.pptx), with the diagrams in it.
