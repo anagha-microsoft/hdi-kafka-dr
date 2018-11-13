@@ -6,7 +6,7 @@ The following documentation covers Disaster Recovery for HDInsight-Kafka.
 [Disaster Recovery]()
 <hr>
 
-## 1.  High Availability
+## 2.  Disaster Recovery
 To level-set, high-availability as referenced in this section has to do with *fault tolerance within the same datacenter*.<BR>
 Acronyms used:<BR>
 HA => High Availability<BR>
