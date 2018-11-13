@@ -270,20 +270,69 @@ echo $KAFKAZKHOSTS
 
 <br>
 
-### 5.0.3. Create consumer properties 
-
-### 5.0.4. Create producer properties 
 
 ## 6.  Setup in secondary Kafka cluster
 ### 6.0.1. SSH into cluster
+Navigate to the portal, get the SSH command to connect to the cluster and SSH to the headnode.
 
 ### 6.0.2. Create Kafka topic
-
-### 6.0.3. Create consumer properties 
-In the terminal create a file called consumer.properties and paste the below into it-<br>
+6.0.2.1. Create and populate cluster name into a variable<br>
 
 ```
-zookeeper.connect=10.23.0.7:2181,10.23.0.9:2181,10.23.0.11:2181
+read -p "Enter the Kafka on HDInsight cluster name: " CLUSTERNAME
+```
+
+<br>
+
+6.0.2.2. Install jq to process json easily<br>
+
+```
+sudo apt -y install jq
+```
+
+<br>
+
+6.0.2.3. Get broker list into a variable<br>
+
+```
+export KAFKABROKERS=`curl -sS -u admin -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/KAFKA/components/KAFKA_BROKER | jq -r '["\(.host_components[].HostRoles.host_name):9092"] | join(",")' | cut -d',' -f1,2`
+```
+
+<br>
+Validate:<br>
+
+```
+echo $KAFKABROKERS
+```
+
+<br>
+
+6.0.2.4. Get zookeeper list into a variable<br>
+
+```
+export KAFKAZKHOSTS=`curl -sS -u admin -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/ZOOKEEPER/components/ZOOKEEPER_SERVER | jq -r '["\(.host_components[].HostRoles.host_name):2181"] | join(",")' | cut -d',' -f1,2`
+```
+
+<br>
+Validate:<br>
+
+```
+echo $KAFKAZKHOSTS
+```
+
+<br>
+6.0.2.5. Create a topic<br>
+
+```
+/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --create --replication-factor 3 --partitions 3 --topic mirrormakertest --zookeeper $KAFKAZKHOSTS
+```
+
+<br>
+### 6.0.3. Create consumer properties 
+In the Linux terminal, in a SSH session, create a file called consumer.properties and paste the below into it;  Replace zookeeper IPs with your secondary Kafka cluster zookeeper IPs-<br>
+
+```
+zookeeper.connect=10.23.0.11:2181,10.23.0.7:2181,10.23.0.9:2181
 group.id=mirrorgroup
 ```
 
@@ -291,15 +340,87 @@ group.id=mirrorgroup
 <hr>
 
 ### 6.0.4. Create producer properties 
+In the Linux terminal, in a SSH session, create a file called producer.properties and paste the below into it;  Replace bootstrap server IPs with your secondary Kafka cluster broker IPs-<br>
 
+```
+bootstrap.servers=10.24.0.4:9092,10.24.0.6:9092,10.24.0.14:9092
+compression.type=none
+```
 
-## 7.  Start MirrorMaker
+## 7.  Start MirrorMaker in the secondary Kafka cluster
+In the secondary cluster SSH terminal, from the Linux command line, run the following command to start MirrorMaker.  Keep this command runnning for the duration of the lab.  Modify number of streams as needed and makes sense.<br>
+
+```
+/usr/hdp/current/kafka-broker/bin/kafka-run-class.sh kafka.tools.MirrorMaker --consumer.config consumer.properties --producer.config producer.properties --whitelist mirrormakertest --num.streams 3
+```
 
 ## 8.  Test MirrorMaker
 ### 8.0.1. Launch console producer in primary Kafka cluster 
 
+Open a new SSH terminal for th secondary cluster and run the below-<br>
+
+8.0.1.1. Create and populate cluster name into a variable<br>
+
+```
+read -p "Enter the Kafka on HDInsight cluster name: " CLUSTERNAME
+```
+
+<br>
+8.0.1.2. Get the Kafka brokers into a variable-<br>
+
+```
+export KAFKABROKERS=`curl -sS -u admin -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/KAFKA/components/KAFKA_BROKER | jq -r '["\(.host_components[].HostRoles.host_name):9092"] | join(",")' | cut -d',' -f1,2`
+```
+
+<br>
+8.0.2.3. Launch the console consumer-<br>
+
+```
+/usr/hdp/current/kafka-broker/bin/kafka-console-producer.sh --broker-list $KAFKABROKERS --topic mirrormakertest
+```
+
+<br>
+
 ### 8.0.2. Launch console consumer in secondary Kafka cluster 
+Open a new SSH terminal for th secondary cluster and run the below-<br>
+
+8.0.2.1. Create and populate cluster name into a variable<br>
+
+```
+read -p "Enter the Kafka on HDInsight cluster name: " CLUSTERNAME
+```
+
+<br>
+8.0.2.2. Get the Kafka brokers into a variable-<br>
+
+```
+export KAFKABROKERS=`curl -sS -u admin -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/KAFKA/components/KAFKA_BROKER | jq -r '["\(.host_components[].HostRoles.host_name):9092"] | join(",")' | cut -d',' -f1,2`
+```
+
+<br>
+8.0.2.3. Launch the console consumer-<br>
+
+```
+/usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --topic mirrormakertest --from-beginning --bootstrap-server $KAFKABROKERS
+```
+
+<br>
 
 ### 8.0.3. Validate replication by keying in some data in the producer in primary Kafka cluster 
 
+In the primary cluster, from the producer console, key in some messages.
+<br>
+![mirror-1](images/14-mirrormaker-test-1.png.png)
+<br><br>
+You should see them in the destination DR cluster's console consumer rightaway.<br>
+
+<hr>
+
 ### 8.0.3. Validate replication by viewing the console consumer in secondary Kafka cluster 
+
+You should see the messages keyed in source/primary cluster's console producer in the DR cluster console consumer.<br>
+
+14-mirrormaker-test-1.png
+
+
+This concludes the lab.
