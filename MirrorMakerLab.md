@@ -171,8 +171,55 @@ PLAINTEXT://0.0.0.0:9092
 <hr>
 
 ### 4.0.3. Primary datacenter - restart Kafka
+Restart Kafka-<br>
+
+![Restart-1](images/7-restart-cluster-1.png)
+<br><br>
+<hr>
+
+![Restart-2](images/7-restart-cluster-2.png)
+<br><br>
+<hr>
+
+![Restart-3](images/7-restart-cluster-3.png)
+<br><br>
+<hr>
+
+![Restart-4](images/7-restart-cluster-4.png)
+<br><br>
+<hr>
+
 
 ### 4.0.4. Secondary datacenter - repeat 4.0.[1-3]
 1.  Configure Kafka for IP advertising
 2.  Configure listener to listen on all network interfaces
 3.  Restart Kafka
+
+## 5.  Setup in primary Kafka cluster
+### 5.0.1. SSH into cluster
+
+### 5.0.2. Create Kafka topic
+
+### 5.0.3. Create consumer properties 
+
+### 5.0.4. Create producer properties 
+
+## 6.  Setup in secondary Kafka cluster
+### 6.0.1. SSH into cluster
+
+### 6.0.2. Create Kafka topic
+
+### 6.0.3. Create consumer properties 
+
+### 6.0.4. Create producer properties 
+
+## 7.  Start MirrorMaker
+
+## 8.  Test MirrorMaker
+### 8.0.1. Launch console producer in primary Kafka cluster 
+
+### 8.0.2. Launch console consumer in secondary Kafka cluster 
+
+### 8.0.3. Validate replication by keying in some data in the producer in primary Kafka cluster 
+
+### 8.0.3. Validate replication by viewing the console consumer in secondary Kafka cluster 
