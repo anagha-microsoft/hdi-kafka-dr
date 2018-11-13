@@ -190,10 +190,16 @@ Restart Kafka-<br>
 <hr>
 
 
-### 4.0.4. Secondary datacenter - repeat 4.0.[1-3]
+### 4.0.4. Make note of the broker IP addresses
+![IPs](images/9-IPs.png)
+<br><br>
+<hr>
+
+### 4.0.5. Secondary datacenter - repeat 4.0.[1-4]
 1.  Configure Kafka for IP advertising
 2.  Configure listener to listen on all network interfaces
 3.  Restart Kafka
+4.  Make a note of the broker IP addresses
 
 ## 5.  Setup in primary Kafka cluster
 ### 5.0.1. SSH into cluster
