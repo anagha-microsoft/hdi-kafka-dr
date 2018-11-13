@@ -54,3 +54,8 @@ Topics and associated events.
 - RPO => Lowest/None | RTO => Lowest/None | Cost => High
 <br><br>
 <hr>
+
+### 2.0.4. Comparing the options
+![8-replicate-options-4](images/8-dr-options-4.png)
+<br><br>
+<hr>
