@@ -101,6 +101,8 @@ We will now peer the virtual networks of the primary and secondary datacenters.
 
 ## 4.  Configure Kafka to broadcast private IP addresses and listen on all network interfaces 
 ### 4.0.1. Primary datacenter - configure IP advertising
+By default, Zookeeper returns the domain name of the Kafka brokers to clients - not resolvable by entities outside the cluster. Follow the steps below to configure IP advertising.<br>
+
 ![Conf-ip-adv-1](images/5-conf-kafka-IP-1.png)
 <br><br>
 <hr>
@@ -124,7 +126,14 @@ We will now peer the virtual networks of the primary and secondary datacenters.
 ![Conf-ip-adv-6](images/5-conf-kafka-IP-6.png)
 <br><br>
 <hr>
-
+Paste this at the bottom of the kafka-env section:<br>
+```
+# Configure Kafka to advertise IP addresses instead of FQDN
+IP_ADDRESS=$(hostname -i)
+echo advertised.listeners=$IP_ADDRESS
+sed -i.bak -e '/advertised/{/advertised@/!d;}' /usr/hdp/current/kafka-broker/conf/server.properties
+echo "advertised.listeners=PLAINTEXT://$IP_ADDRESS:9092" >> /usr/hdp/current/kafka-broker/conf/server.properties
+```
 ![Conf-ip-adv-7](images/5-conf-kafka-IP-7.png)
 <br><br>
 <hr>
@@ -138,10 +147,14 @@ We will now peer the virtual networks of the primary and secondary datacenters.
 <hr>
 
 ### 4.0.2. Primary datacenter - configure listener
+Configure Kafka to listen on all network interfaces-<br>
 ![Conf-listener-1](images/6-conf-kafka-listener-1.png)
 <br><br>
 <hr>
-
+Replace the listener configuration with this:<br>
+```
+PLAINTEXT://0.0.0.0:9092 
+```
 ![Conf-listener-2](images/6-conf-kafka-listener-2.png)
 <br><br>
 <hr>
