@@ -269,6 +269,7 @@ echo $KAFKAZKHOSTS
 ```
 
 <br>
+
 ### 5.0.3. Create consumer properties 
 
 ### 5.0.4. Create producer properties 
@@ -279,8 +280,18 @@ echo $KAFKAZKHOSTS
 ### 6.0.2. Create Kafka topic
 
 ### 6.0.3. Create consumer properties 
+In the terminal create a file called consumer.properties and paste the below into it-<br>
+
+```
+zookeeper.connect=10.23.0.7:2181,10.23.0.9:2181,10.23.0.11:2181
+group.id=mirrorgroup
+```
+
+<br>
+<hr>
 
 ### 6.0.4. Create producer properties 
+
 
 ## 7.  Start MirrorMaker
 
