@@ -5,7 +5,7 @@ HDInsight Kafka is Azure's Hortonworks distribution based managed Kafka as a ser
 The following documentation covers High Availability and Disaster Recovery for HDInsight-Kafka.
 
 [High Availability](README.md#1--high-availability)<br>
-[Disaster Recovery]()
+[Disaster Recovery](DisasterRecovery.md)
 <hr>
 
 ## 1.  High Availability
@@ -57,4 +57,4 @@ But... there are some datacenters with only two fault domains.  Consider avoidin
 The framework manages redirection for you to a different replica.
 
 ## 2.  Disaster Recovery
-Next
+[Next](https://github.com/anagha-microsoft/hdi-kafka-dr/blob/master/DisasterRecovery.md)
