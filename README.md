@@ -34,7 +34,7 @@ When planning HA for HDInsight Kafka, the following are some considerations:<br>
 4.  Is Zookeeper count adequate and is it configured HA (update/fault domain configured)?
 5.  Is HDInsight service, monitoring and self-healing my brokers?
 6.  Are my replicas configured for HA?
-
+The following address these considerations and more.<br>
 
 ### 1.0.1. HDInsight platform infrastructure - storage
 HDInsight Kafka leverages Azure managed disks for storage.  At provision-time you can choose between premium and standard managed disks.<BR>
