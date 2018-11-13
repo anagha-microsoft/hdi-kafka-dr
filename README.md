@@ -54,7 +54,7 @@ https://github.com/hdinsight/hdinsight-kafka-tools
 But... there are some datacenters with only two fault domains.  Consider avoiding Kafka in these datacenters if at all possible, and if you cant, increase topic replication to 4.
 
 ### 1.0.9. What about when I am writing/reading from Kafka and a broker hosting my leader partition replica goes down?
-The framework manages redirection for you to a different replica.
+The framework manages redirection to a different replica.  Consider adding retries in your application code.
 
 ## 2.  Disaster Recovery
 [Next](https://github.com/anagha-microsoft/hdi-kafka-dr/blob/master/DisasterRecovery.md)
