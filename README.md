@@ -13,7 +13,22 @@ The following documentation covers High Availability and Disaster Recovery for H
 To level-set, high-availability as referenced in this section has to do with *fault tolerance within the same datacenter*.<BR>
 Acronyms used:<BR>
 HA => High Availability<BR>
-FT => Fault tolerance<BR>
+FT => Fault tolerance<BR><br>
+  
+**HDInsight cluster topology:**
+<br>
+![Topology](images/10-deployment-diagram-2.png)
+<br>
+
+
+When planning HA for HDInsight Kafka, the following are some considerations:<br>
+1.  Is the storage infrastructure HA?
+2.  Is the compute infrastructure HA?
+3.  Is the HDInsight cluster management service (Ambari) HA?
+4.  Is Zookeeper count adequate and is it configured HA (update/fault domain configured)?
+5.  Is HDInsight service, monitoring and self-healing my brokers?
+6.  Are my replicas configured for HA?
+
 
 ### 1.0.1. HDInsight platform infrastructure - storage
 HDInsight Kafka leverages Azure managed disks for storage.  At provision-time you can choose between premium and standard managed disks.<BR>
