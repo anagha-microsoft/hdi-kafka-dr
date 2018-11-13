@@ -148,13 +148,16 @@ echo "advertised.listeners=PLAINTEXT://$IP_ADDRESS:9092" >> /usr/hdp/current/kaf
 
 ### 4.0.2. Primary datacenter - configure listener
 Configure Kafka to listen on all network interfaces-<br>
+
 ![Conf-listener-1](images/6-conf-kafka-listener-1.png)
 <br><br>
 <hr>
+
 Replace the listener configuration with this:<br>
 ```
 PLAINTEXT://0.0.0.0:9092 
 ```
+
 ![Conf-listener-2](images/6-conf-kafka-listener-2.png)
 <br><br>
 <hr>
