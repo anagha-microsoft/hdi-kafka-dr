@@ -3,7 +3,7 @@
 
 This sample covers DR for HDInsight Kafka leveraging MirrorMaker.  In this example, we will provision HDInsight Kafka and dependencies in US East (primary) and US West (secondary).  The following are steps to deploy clusters, configure replication to DR and test the replication.<br>
 
-[Summary](MirrorMakerLab.md#long-story-short)<br>
+[Summary](MirrorMakerLab.md#quick-readlong-story-short)<br>
 
 [1. Primary datacenter - USEast - setup](MirrorMakerLab.md#1--primary-datacenter---useast---setup)<br>
 - [1.0.1. Provision resource group in USEast](MirrorMakerLab.md#101-provision-resource-group-in-useast)<br>
