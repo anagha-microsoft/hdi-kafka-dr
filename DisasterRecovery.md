@@ -87,4 +87,4 @@ This is the defacto Kafka OSS replication utility for Kafka - topic to topic, cl
 [Next](MirrorMakerLab.md)
 
 ### Diagrams
-Want to take the diagrams and customize? Find the PowerPoint deck [here](images/DR-Architecture-Options.pptx), with the diagrams in it.
+Want to take the diagrams and customize? Find the PowerPoint deck [here](decks/https://github.com/anagha-microsoft/hdi-kafka-dr/blob/master/decks/Diagrams.pptx), with the diagrams in it.
