@@ -190,6 +190,7 @@ By default, Zookeeper returns the domain name of the Kafka brokers to clients - 
 <br><br>
 <hr>
 Paste this at the bottom of the kafka-env section:<br>
+
 ```
 # Configure Kafka to advertise IP addresses instead of FQDN
 IP_ADDRESS=$(hostname -i)
@@ -197,6 +198,7 @@ echo advertised.listeners=$IP_ADDRESS
 sed -i.bak -e '/advertised/{/advertised@/!d;}' /usr/hdp/current/kafka-broker/conf/server.properties
 echo "advertised.listeners=PLAINTEXT://$IP_ADDRESS:9092" >> /usr/hdp/current/kafka-broker/conf/server.properties
 ```
+
 ![Conf-ip-adv-7](images/5-conf-kafka-IP-7.png)
 <br><br>
 <hr>
